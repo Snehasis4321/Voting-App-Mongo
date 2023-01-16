@@ -1,0 +1,18 @@
+<% layout('main.ejs')%>
+    <h1>New Party</h1>
+    <br>
+    <form action="/parties/new" method="post">
+        <div class="inp-box">Name : </div>
+        <input type="text" name="name" id="name">
+        <br><br>
+        <div class="inp-box">Image :</div>
+        <input type="text" name="image" id="image">
+        <br><br>
+        <div class="inp-box">Leader :</div>
+        <input type="text" name="leader" id="leader">
+        <br><br>
+        <div class="inp-box">Manifesto : </div>
+        <input type="text" name="manifesto" id="manifesto">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>

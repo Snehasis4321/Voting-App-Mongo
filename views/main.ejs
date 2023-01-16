@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+
+        .navbar {
+            display: fixed;
+            padding: 20px;
+            background-color: #2b2d42;
+            color: white;
+        }
+
+        body {
+            background-color: #8d99ae;
+            min-height: 100vh;
+        }
+
+        .content {
+            padding: 50px;
+            background-color: #edf2f4;
+            /* height: 80vh; */
+            /* overflow: scroll; */
+            margin: auto;
+            text-align: center;
+        }
+
+        a {
+            margin-top: 50px;
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            background-color: #e63946;
+            border-radius: 5px;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 220px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .inp-box {
+            text-align: left;
+            display: inline-block;
+            width: 120px;
+            /* background-color: red; */
+
+        }
+
+        .result-area {
+            /* background-color: rebeccapurple; */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .result-area img {
+            height: 200px;
+            width: 200px;
+        }
+
+        .result {
+            border: 2px solid black;
+            padding: 30px;
+        }
+
+        .winner {
+            padding: 10px;
+            background-color: #e63946;
+            color: #edf2f4;
+        }
+
+        .loser {
+            padding: 10px;
+            background-color: #2b2d42;
+            color: #edf2f4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/" style="text-decoration: none; margin: 0; padding: 0;">
+            <h3>Voting App</h3>
+        </a>
+    </div>
+    <div class="content">
+        <%-body %>
+    </div>
+</body>
+
+</html>

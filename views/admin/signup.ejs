@@ -1,0 +1,13 @@
+<% layout('main.ejs')%>
+    <h1>Admin Login</h1>
+    <form action="/admin/login" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+        <label for="uniquekey">Government Unique Key</label>
+        <input type="text" name="uniquekey" id="uniquekey" required>
+        <label for="email">Government Email</label>
+        <input type="email" name="email" id="email" required>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+        <button type="submit">Submit</button>
+    </form>

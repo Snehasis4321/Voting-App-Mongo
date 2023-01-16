@@ -1,0 +1,41 @@
+<!-- display the result  -->
+<% layout('main.ejs')%>
+    <%if(!event[0].start && event[0].end){%>
+        <div class="result-area">
+            <% for (let i=0; i < result.length; i++) { %>
+                <div class="result ">
+                    <img src="<%=result[i].party.image%>" alt="<%=result[i].party.name%>">
+                    <br>
+                    <div class="name">
+                        <h2>
+                            <%=result[i].party.name%> Party
+                        </h2>
+                    </div><br>
+                    <div class="leader">
+
+                        <%=result[i].party.leader%>
+
+                    </div><br>
+                    <div class="votes">
+                        <%if(result[i].count==maxVotes){ %>
+                            <h3>
+                                <%=result[i].count%> Votes
+                            </h3><br>
+                            <div class="winner">
+                                <h3>Winner</h3>
+                            </div>
+                            <% } else { %>
+                                <h3>
+                                    <%=result[i].count%> Vote
+                                </h3> <br>
+                                <div class="loser">
+                                    <h3>Loser</h3>
+                                </div>
+                                <% } %>
+                    </div>
+                </div>
+                <% } %>
+
+
+                    <% } %>
+        </div>

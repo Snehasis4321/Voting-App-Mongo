@@ -1,0 +1,63 @@
+<% layout('main.ejs')%>
+    <h1>Admin Portal</h1>
+    <br><br>
+    <h3>All Parties</h3>
+    <br>
+    <style>
+        table {
+            text-align: center;
+            border: 2px solid black;
+            margin: auto;
+        }
+
+        th,
+        td {
+            border: 2px dotted black;
+            padding: 15px;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Name</th>
+            <!-- <th>Image</th> -->
+            <th>Leader</th>
+            <th>Manifesto</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <% for (let i=0; i < parties.length; i++) { %>
+            <tr>
+                <td>
+                    <%=parties[i].name%>
+                </td>
+                <!-- <td>
+                <%=parties[i].image%>
+            </td> -->
+                <td>
+                    <%=parties[i].leader%>
+                </td>
+                <td>
+                    <%=parties[i].manifesto%>
+                </td>
+                <td><a href="/parties/edit/<%=parties[i].id%>">Edit</a></td>
+                <td>
+                    <form action="/parties/delete/<%=parties[i].id%>?_method=DELETE" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+    <br>
+
+    <a href="../parties/new">Add New Party</a>
+    <br><br><br>
+    <h3>Voting Setting</h3>
+    <br>
+    <form action="/start/" method="post">
+
+        <button type="submit">Start Voting</button>
+    </form>
+    <form action="/end/" method="post">
+        <button type="submit">Stop Voting Get Result</button>
+    </form>

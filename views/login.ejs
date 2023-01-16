@@ -1,0 +1,15 @@
+<% layout('main.ejs')%>
+
+    <div class="login">
+        <h1>Login</h1>
+        <br>
+        <form action="/login" method="post">
+            <div class="inp-box">Addhar :</div>
+            <input type="number" name="addharno" id="addharno" required><br>
+            <br>
+            <div class="inp-box">Password :</div>
+            <input type="password" name="password" id="password" required><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>

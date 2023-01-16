@@ -1,0 +1,86 @@
+<% layout('main.ejs')%>
+    <div class="voting">
+        <h1>Voting Page</h1><br>
+        <h3>Welcome <%=user.name%>
+        </h3><br>
+        <form action="/logout" method="post"><button type="submit">Logout</button></form>
+        <br>
+        <style>
+            img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .voting-area {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                margin: auto;
+                width: 70%;
+                flex-wrap: wrap;
+                gap: 20px;
+
+            }
+
+            .parties {
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                border: 1px solid black;
+            }
+
+            .end {
+                padding: 20px;
+            }
+        </style>
+        <%if(event[0].start && !event[0].end){%>
+            <div class="voting-area">
+                <%if(!user.isVoted){%>
+                    <% for (let i=0; i < parties.length; i++) { %>
+                        <div class="parties">
+                            <img src="<%=parties[i].image%>" alt="<%=parties[i].name%>">
+                            <br>
+                            <div class="name">
+                                <br>
+                                <h3>
+                                    <%=parties[i].name%> Party
+                                </h3><br>
+                            </div>
+                            <div class="manifesto">
+                                <em>
+                                    <%=parties[i].manifesto%>
+                                </em><br>
+                            </div>
+                            <div class="leader">
+
+                                <br>
+                                <form action="/vote/<%=user.id%>/<%=parties[i].id%>" method="post">
+                                    <input type="hidden" name="user_id" value="<%=user.id%>">
+                                    <input type="hidden" name="party_id" value="<%=parties[i].id%>">
+                                    <button type="submit">Vote for <%=parties[i].leader%></button>
+                                </form>
+
+
+                            </div>
+                        </div>
+                        <% } %>
+                            <% } %>
+                                <%if(user.isVoted){%>
+                                    <h1>You have already voted</h1>
+                                    <% } %>
+
+
+            </div>
+            <% } %>
+
+                <%if(!event[0].start && event[0].end){%>
+                    <div class="end">
+                        <h1>Event has ended !!!</h1>
+                        <br><br>
+                        <a href="/result">Click Here to View Result</a>
+                    </div>
+                    <% } %>
+    </div>
